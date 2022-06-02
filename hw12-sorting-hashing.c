@@ -23,7 +23,7 @@ int search(int *ht, int key);  // hash table에서 key를 찾아 hash table의 i
 
 int main()
 {
-	char command;
+	char command; // 변수 command
 	int *array = NULL;
 	int *hashtable = NULL;
 	int key = -1;
@@ -44,28 +44,28 @@ int main()
 		printf("----------------------------------------------------------------\n");
 
 		printf("Command = ");
-		scanf(" %c", &command);
+		scanf(" %c", &command); // command 값 받기
 
 		switch(command) {
-		case 'z': case 'Z':
+		case 'z': case 'Z': // command 값이 z 또는  일 경우
 			initialize(&array);
 			break;
-		case 'q': case 'Q':
+		case 'q': case 'Q': // command 값이 q 또는 Q 일 경우
 			freeArray(array);
 			break;
-		case 's': case 'S':
+		case 's': case 'S': // command 값이 s 또는 S 일 경우
 			selectionSort(array);
 			break;
-		case 'i': case 'I':
+		case 'i': case 'I': // command 값이 i 또는 I 일 경우
 			insertionSort(array);
 			break;
-		case 'b': case 'B':
+		case 'b': case 'B': // command 값이 b 또는 B 일 경우
 			bubbleSort(array);
 			break;
-		case 'l': case 'L':
+		case 'l': case 'L': // command 값이 l 또는 L 일 경우
 			shellSort(array);
 			break;
-		case 'k': case 'K':
+		case 'k': case 'K': // command 값이 k 또는 K 일 경우
 			printf("Quick Sort: \n");
 			printf("----------------------------------------------------------------\n");
 			printArray(array);
@@ -74,7 +74,7 @@ int main()
 			printArray(array);
 			break;
 
-		case 'h': case 'H':
+		case 'h': case 'H': // command 값이 h 또는 H 일 경우
 			printf("Hashing: \n");
 			printf("----------------------------------------------------------------\n");
 			printArray(array);
@@ -82,15 +82,15 @@ int main()
 			printArray(hashtable);
 			break;
 
-		case 'e': case 'E':
+		case 'e': case 'E': // command 값이 e 또는 E 일 경우
 			printf("Your Key = ");
-			scanf("%d", &key);
+			scanf("%d", &key); // key 값 받기
 			printArray(hashtable);
 			index = search(hashtable, key);
 			printf("key = %d, index = %d,  hashtable[%d] = %d\n", key, index, index, hashtable[index]);
 			break;
 
-		case 'p': case 'P':
+		case 'p': case 'P': // command 값이 p 또는 P 일 경우
 			printArray(array);
 			break;
 		default:
@@ -98,7 +98,7 @@ int main()
 			break;
 		}
 
-	}while(command != 'q' && command != 'Q');
+	}while(command != 'q' && command != 'Q'); // 입력받은 command 값이 q 또는 Q 이 아닐 경우 동안 진행
 	return 1;
 }
 
